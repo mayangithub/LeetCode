@@ -5,7 +5,7 @@ import java.util.List;
 
 
 /**
- * Pascal's Triangle #118
+ * Pascal's Triangle #118 -- accepted
  * 
  * Given numRows, generate the first numRows of Pascal's triangle.
  * For example, given numRows = 5,

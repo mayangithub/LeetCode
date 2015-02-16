@@ -1,7 +1,7 @@
 package edu.pitt.array;
 
 /**
- * Merge Sorted Array #88
+ * Merge Sorted Array #88 -- accepted
  * Given two sorted integer arrays A and B, merge B into A as one sorted array.
  * 
  * Note:
@@ -10,6 +10,8 @@ package edu.pitt.array;
  * 
  * @author yanma
  *
+ * @since 2015-02-15
+ * @version 2015-02-15
  */
 public class MergeSortedArray_88 {
 

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Pascal's Triangle II #119
+ * Pascal's Triangle II #119 -- accepted
  * 
  * Given an index k, return the kth row of the Pascal's triangle.
  * For example, given k = 3,
@@ -13,7 +13,8 @@ import java.util.List;
  * Could you optimize your algorithm to use only O(k) extra space? 
  * @author yanma
  * 
- *
+ * @since 2015-02-13
+ * @version 2015-02-13
  *
  */
 public class PascalTriangleII_119 {
