@@ -88,12 +88,16 @@ public class PascalTriangle_118 {
 		// TODO Auto-generated method stub
 		List<List<Integer>> result = generate(5);
 		
-//		for (int i = 0; i< 5; i++) {
-//			ArrayList<Integer> list = result.get(i);
-//			
-//			System.out.println("-------");
-//			
-//		}
+		for (int i = 0; i< 5; i++) {
+			List<Integer> list = result.get(i);
+			System.out.print("[");
+			for (Integer integer : list) {
+				System.out.print(integer + ", ");
+			}
+			System.out.println("]");
+			System.out.println("-------");
+			
+		}
 		
 	}
 
