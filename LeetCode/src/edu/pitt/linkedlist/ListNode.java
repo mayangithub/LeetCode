@@ -4,7 +4,7 @@
 package edu.pitt.linkedlist;
 
 /**
- * Definition for singly-linked list. for Q160
+ * Definition for singly-linked list.
  * @author yanma 
  * @version 2015-02-22
  */
