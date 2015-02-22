@@ -9,7 +9,7 @@ package edu.pitt.string;
  * 
  * @author yanma
  * @since 2015-02-20
- * @version 2015-02-20
+ * @version 2015-02-21
  *
  */
 public class LongestCommonPrefix_14 {
