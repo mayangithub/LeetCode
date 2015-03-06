@@ -1,7 +1,5 @@
 package edu.pitt.hashtable;
 
-import java.util.Hashtable;
-
 /**
  * Valid Sudoku #36
  * Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
