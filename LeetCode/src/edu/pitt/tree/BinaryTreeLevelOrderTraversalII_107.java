@@ -5,11 +5,12 @@ package edu.pitt.tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
- * Binary Tree Level Order Traversal #102 --- Accepted 229ms
- * Given a binary tree, return the level order traversal of its nodes' values. 
- * (ie, from left to right, level by level).
+ * Binary Tree Level Order Traversal II #107 --- Accepted 237ms
+ * Given a binary tree, return the bottom-up level order traversal of its nodes' values. 
+ * (ie, from left to right, level by level from leaf to root).
  * For example:
  * Given binary tree {3,9,20,#,#,15,7},
  * 
@@ -18,27 +19,28 @@ import java.util.List;
  *   9  20
  *     /  \
  *    15   7
- * return its level order traversal as:
  * [
- *   [3],
+ *   [15,7],
  *   [9,20],
- *   [15,7]
+ *   [3]
  * ]
  * @author Yan Ma
- * @since 2015-03-11
+ * @since 2015-03-12
  * @version 2015-03-12
+ *
+ *
  * **** 
  * Test case:
  * 1. {} return []
  */
-public class BinaryTreeLevelOrderTraversal_102 {
-    
-	public static List<List<Integer>> levelOrder(TreeNode root) {
-		List<List<Integer>> wholeList = new ArrayList<List<Integer>>();
+public class BinaryTreeLevelOrderTraversalII_107 {
+    public static List<List<Integer>> levelOrderBottom(TreeNode root) {
+    	List<List<Integer>> wholeList = new ArrayList<List<Integer>>();
 		
         if (root == null) {
         	return wholeList;
         }
+        Stack<List<Integer>> wholeStack = new Stack<List<Integer>>();
         
         List<Integer> innerList = new ArrayList<Integer>();
         List<TreeNode> preNodeList = new ArrayList<TreeNode>();
@@ -46,7 +48,7 @@ public class BinaryTreeLevelOrderTraversal_102 {
         
         preNodeList.add(root);
         innerList.add(Integer.valueOf(root.val));
-        wholeList.add(innerList);
+        wholeStack.push(innerList);
         while (preNodeList.size() > 0) {
         	currNodeList = new ArrayList<TreeNode>();
         	innerList = new ArrayList<Integer>();
@@ -63,19 +65,24 @@ public class BinaryTreeLevelOrderTraversal_102 {
 	    	}
         	
         	if (innerList.size() > 0) {
-        		wholeList.add(innerList);
+        		wholeStack.push(innerList);
         	}
         	preNodeList = currNodeList;
+        }
+        
+        while(!wholeStack.isEmpty()) {
+        	wholeList.add(wholeStack.pop());
         }
     	
         return wholeList;
     }
+    
+    
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		TreeNode a1 = new TreeNode(3);
 		TreeNode a2 = new TreeNode(9);
 		TreeNode a3 = new TreeNode(20);
@@ -87,7 +94,7 @@ public class BinaryTreeLevelOrderTraversal_102 {
 		a3.left = a4;
 		a3.right = a5;
 		
-		List<List<Integer>> result = levelOrder(a1);
+		List<List<Integer>> result = levelOrderBottom(a1);
 		System.out.println("[");
 		for (List<Integer> innerL: result) {
 			System.out.print("[");
