@@ -13,7 +13,7 @@ package edu.pitt.array;
  * Could you do it in-place with O(1) extra space? 
  * @author yanma
  * @since 2015-03-13
- * @version 2015-03-14
+ * @version 2015-03-15
  */
 public class RotateArray_189 {
 	
