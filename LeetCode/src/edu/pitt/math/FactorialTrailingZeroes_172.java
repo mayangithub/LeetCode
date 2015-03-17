@@ -4,7 +4,7 @@
 package edu.pitt.math;
 
 /**
- * Factorial Trailing Zeroes #172
+ * Factorial Trailing Zeroes #172 --- Accepted 225 ms
  * Given an integer n, return the number of trailing zeroes in n!.
  * Note: Your solution should be in logarithmic time complexity.
  * @author yanma
@@ -15,7 +15,6 @@ public class FactorialTrailingZeroes_172 {
     public static int trailingZeroes(int n) {
         int n2 = 0;
         int n5 = 0;
-        int n10 = 0;
         
         int div = n;
         while (div > 0) {
@@ -29,13 +28,7 @@ public class FactorialTrailingZeroes_172 {
         	n5 += div;
         }
         
-        div = n;
-        while (div > 0) {
-        	div = div / 10;
-        	n10 += div;
-        }
-        
-        return Math.min(n2, n5) + n10;
+        return Math.min(n2, n5);
         
     }
     
@@ -53,6 +46,7 @@ public class FactorialTrailingZeroes_172 {
 		System.out.println("1808548329: " + trailingZeroes(a2));
 		System.out.println("150: " + trailingZeroes(150));
 		System.out.println("25: " + trailingZeroes(25));
+		System.out.println("10: " + trailingZeroes(10));
 		
 	}
 
