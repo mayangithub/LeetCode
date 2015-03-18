@@ -68,6 +68,7 @@ public class ExcelSheetColumnTitle_168 {
 		System.out.println("78: " + convertToTitle(78));
 		System.out.println("79: " + convertToTitle(79));
 		System.out.println("7924: " + convertToTitle(7924));
+		System.out.println("30530: " + convertToTitle(30530));
 	}
 
 }
