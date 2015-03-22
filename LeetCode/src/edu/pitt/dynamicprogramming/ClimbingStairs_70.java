@@ -20,7 +20,7 @@ public class ClimbingStairs_70 {
     	 *    1 to n/2 is the number of 2 steps in sequence
     	 * 2. find the arrangement of steps, total position
     	 */
-    	
+    	return 0;
         
     }
 	/**
