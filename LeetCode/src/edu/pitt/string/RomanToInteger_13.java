@@ -100,6 +100,9 @@ public class RomanToInteger_13 {
 		String string = "I";
 		int sum = romanToInt(string);
 		System.out.println("I: " + sum);
+		
+		String string1 = "MMMCMXCIX";
+		System.out.println("MMMCMXCIX: " + romanToInt(string1));
 	}
 
 }
