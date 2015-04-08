@@ -21,7 +21,7 @@ package edu.pitt.array;
  *  word = "ABCB", -> returns false.
  * @author yanma
  * @since 2015-04-03
- * @version 2015-04-03
+ * @version 2015-04-08
  */
 public class WordSearch_79 {
     public static boolean exist(char[][] board, String word) {
