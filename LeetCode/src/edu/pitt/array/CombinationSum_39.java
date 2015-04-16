@@ -21,7 +21,7 @@ import java.util.List;
  * 	[2, 2, 3] 
  * @author yanma
  * @since 2015-04-08
- * @version 2015-04-14
+ * @version 2015-04-15
  */
 public class CombinationSum_39 {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
