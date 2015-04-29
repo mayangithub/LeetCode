@@ -62,7 +62,6 @@ public class BinaryTreeRightSideView_199 {
         	    for (int i = rightList.size(); i < leftList.size(); i++) {
         	        rightList.add(leftList.get(i));
         	    }
-        	    
         		return rightList;
         	} else {
         		return rightList;
