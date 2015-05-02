@@ -6,7 +6,7 @@ package edu.pitt.linkedlist;
 import java.util.ArrayList;
 
 /**
- * Insertion Sort List #147
+ * Insertion Sort List #147 --- Accepted 351ms
  * Sort a linked list using insertion sort.
  * @author yanma
  * @since 2015-05-01
@@ -74,7 +74,6 @@ public class InsertionSortList_147 {
         	pre = helper;
         	curr = next;
         }
-        
         
         return helper.next;
     }
