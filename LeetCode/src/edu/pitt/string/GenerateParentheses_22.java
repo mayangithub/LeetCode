@@ -13,7 +13,7 @@ import java.util.List;
  *  "((()))", "(()())", "(())()", "()(())", "()()()" 
  * @author yanma
  * @since 2015-05-06
- * @version 2015-05-06
+ * @version 2015-05-07
  */
 public class GenerateParentheses_22 {
 	/**
