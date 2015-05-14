@@ -14,6 +14,11 @@ package edu.pitt.dynamicprogramming;
  */
 public class MaximumSubarray_53 {
 
+	/**
+	 * O(n) time complexity
+	 * @param nums
+	 * @return
+	 */
     public static int maxSubArray(int[] nums) {
         if (nums == null || nums.length == 0) {
         	return 0;
@@ -32,7 +37,12 @@ public class MaximumSubarray_53 {
         return globalmax;
     }
 	
-	
+    /**
+     * Divide and Conquer
+     */
+    
+    
+    
 	/**
 	 * @param args
 	 */

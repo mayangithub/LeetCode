@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Combination Sum #39 --- unfinished
+ * Combination Sum #39 --- Accepted 398ms
  *  Given a set of candidate numbers (C) and a target number (T), 
  *  find all unique combinations in C where the candidate numbers sums to T.
  *  The same repeated number may be chosen from C unlimited number of times.
@@ -24,7 +24,7 @@ import java.util.List;
  * @version 2015-04-15
  */
 public class CombinationSum_39 {
-    public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    public static List<List<Integer>> combinationSum(int[] candidates, int target) {
     	List<List<Integer>> resultList = new ArrayList<List<Integer>>();
         if (candidates == null || candidates.length == 0) {
         	return resultList;
@@ -45,23 +45,20 @@ public class CombinationSum_39 {
         return resultList;
     }
     
-    public void combinationSubsum(int[] candidates, int target, int index, List<List<Integer>> resultList, List<Integer> innerList) {
-    	if (target < candidates[index]) {
-    		return ;
-    	} else if (target == candidates[index]) {
-    		innerList.add(target);
+    public static void combinationSubsum(int[] candidates, int target, int index, List<List<Integer>> resultList, List<Integer> innerList) {
+    	if (index == candidates.length) {
+    		return;
+    	} else if (target == 0) {
+    		List<Integer> newInnerList = new ArrayList<>();
+    		newInnerList.addAll(innerList);
+    		resultList.add(newInnerList);
     		return;
     	}
     	
-    	resultList.add(innerList);
-    	
-    	for (int i = index; i <= candidates.length - 1 && candidates[i] <= target; i++) {
+    	for (int i = index; i < candidates.length && candidates[i] <= target; i++) {
     		innerList.add(candidates[i]);
     		combinationSubsum(candidates, target - candidates[i], i, resultList, innerList);
-    		innerList.remove(innerList.size() - 1 );
-    		while (i < candidates.length - 1 && candidates[i + 1] == candidates[i]) {
-    			i++;
-    		}
+    		innerList.remove(innerList.size() - 1);
     	}
     	    	
     }
@@ -70,7 +67,18 @@ public class CombinationSum_39 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		int[] candidates = {92,71,89,74,102,91,70,119,86,116,114,106,80,81,115,99,117,93,76,77,111,110,75,104,95,112,94,73};
+		int target = 310;
+		
+		List<List<Integer>> list = combinationSum(candidates, target);
+		for (List<Integer> innerList: list) {
+			System.out.print("[");
+			for (Integer num: innerList) {
+				System.out.print(" " + num + ",");
+			}
+			System.out.println("]");
+		}
+		
 	}
 
 }
