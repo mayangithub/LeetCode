@@ -14,6 +14,7 @@ public class CountPrimes_204 {
 
 	/**
 	 * Accepted 243ms
+	 * http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 	 * To find all the prime numbers less than or equal to a given integer n by Eratosthenes' method:
 	 * Create a list of consecutive integers from 2 through n: (2, 3, 4, ..., n).
 	 * Initially, let p equal 2, the first prime number.
