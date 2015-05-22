@@ -80,45 +80,19 @@ public class ConvertSortedListtoBinarySearchTree_109 {
     	
     	return root;
     }
-        
-    public TreeNode sortedListToBST1(ListNode head) {
-    	if (head == null) {
-        	return null;
-        } else if (head.next == null) {
-        	TreeNode node = new TreeNode(head.val);
-        	return node;
-        }
-        
-        int size = getSize(head);
-        
-        TreeNode root = constrctTree(head, size);
-        
-        return root;
-    }
     
-    
-    public TreeNode findNode(ListNode head, int index) {
-    	int count = 0;
-    	while (count != index) {
-			
-		}
-    	
-    	
-    }
-    
-    public TreeNode constrctTree(ListNode head, int length) {
-    	
-    }
-    
-    
-    
-	
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		ListNode node1 = new ListNode(1);
+		ListNode node2 = new ListNode(3);
+		
+		node1.next = node2;
+		
+		
+		
 	}
 
 }

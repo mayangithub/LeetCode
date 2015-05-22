@@ -30,7 +30,7 @@ public class DecodeWays_91 {
     	
     	int length = s.length();
     	int[] count = new int[length + 1];
-    	count[length] = 1;
+    	count[length] = 1; 
     	count[length - 1] = s.charAt(length - 1) == '0'? 0: 1; //if last digit != 0, one decode way
     	
     	for (int index = length - 2; index >= 0; index--) {
