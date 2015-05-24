@@ -20,7 +20,8 @@ import java.util.List;
  * Output:
  * [[1,2,6], [1,3,5], [2,3,4]]
  * @author yanma
- *
+ * @since 2015-05-24
+ * @version 2015-05-24
  */
 public class CombinationSumIII_216 {
 
