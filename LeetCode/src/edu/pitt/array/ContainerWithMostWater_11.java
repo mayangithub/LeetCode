@@ -3,8 +3,6 @@
  */
 package edu.pitt.array;
 
-import java.sql.Array;
-import java.util.ArrayList;
 
 /**
  * Container With Most Water #11 --- Accepted 317ms

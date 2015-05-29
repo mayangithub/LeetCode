@@ -3,8 +3,6 @@
  */
 package edu.pitt.array;
 
-import java.util.ArrayList;
-
 
 /**
  * Remove Duplicates from Sorted Array II #80 --- Accepted 235ms

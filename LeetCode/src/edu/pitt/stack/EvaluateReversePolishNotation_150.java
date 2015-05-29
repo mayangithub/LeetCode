@@ -62,7 +62,7 @@ public class EvaluateReversePolishNotation_150 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String[] stringArray = {"2", "1", "+", "3", "*"};
+//		String[] stringArray = {"2", "1", "+", "3", "*"};
 		String[] stringarray2 = {"4", "13", "5", "/", "+"};
 		System.out.println(evalRPN(stringarray2));
 	}

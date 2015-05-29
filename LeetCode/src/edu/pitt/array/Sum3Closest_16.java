@@ -66,7 +66,7 @@ public class Sum3Closest_16 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int[] num = {-1, 2, 1, -4};
+//		int[] num = {-1, 2, 1, -4};
 		int[] num1 = {-3,-2,-5,3,-4};
 		System.out.println(threeSumClosest(num1, -1));
 		

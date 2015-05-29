@@ -3,7 +3,6 @@
  */
 package edu.pitt.array;
 
-import edu.pitt.tree.TreeNode;
 
 /**
  * Kth Largest Element in an Array #215 --- Accepted 304ms

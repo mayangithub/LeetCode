@@ -50,7 +50,7 @@ public class MultiplyStrings_43 {
         String resultString = "";
         for (int i = resultarray.length - 1; i >= 0; i--) {
         	if (i == 0 && resultarray[i] == 0) {
-        		resultString = resultString;
+        		continue;
         	} else {
         		resultString = resultarray[i] + resultString;
         	}

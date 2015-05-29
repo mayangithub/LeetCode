@@ -45,7 +45,7 @@ public class LargestNumber_179 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums = {3, 30, 34, 0, 5, 9};
+//		int[] nums = {3, 30, 34, 0, 5, 9};
 		int[] num1 = {0,0};
 		System.out.println(largestNumber(num1));
 	}

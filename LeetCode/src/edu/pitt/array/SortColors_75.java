@@ -32,14 +32,12 @@ public class SortColors_75 {
         
         int zero = 0;
         int one = 0;
-        int two = 0;
         
         for (int i = 0; i < A.length; i++) {
             switch(A[i]) {
                 case 0: zero++; break;
                 case 1: one++;  break;
-                case 2: two++;  break;
-                default:        break;
+                default:  break;
             }
         }
         

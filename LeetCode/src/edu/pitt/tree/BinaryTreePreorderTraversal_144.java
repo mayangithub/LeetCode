@@ -4,7 +4,6 @@
 package edu.pitt.tree;
 
 import java.util.ArrayList;
-import java.util.EmptyStackException;
 import java.util.List;
 
 /**

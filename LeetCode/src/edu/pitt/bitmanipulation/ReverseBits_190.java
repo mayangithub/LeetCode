@@ -30,7 +30,7 @@ public class ReverseBits_190 {
     public static long reverseBits(long n) {
     	String binary = Long.toBinaryString(n);
 //    	String binary = Integer.toBinaryString(n);
-    	String zeros = "";
+//    	String zeros = "";
     	
     	while (binary.length() < 32) {
     		binary = "0" + binary;

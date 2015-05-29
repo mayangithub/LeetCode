@@ -3,8 +3,6 @@
  */
 package edu.pitt.dynamicprogramming;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * House Robber II #213 --- accepted 324ms

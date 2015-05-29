@@ -53,9 +53,9 @@ public class MinimumDepthOfBinaryTree_111 {
 		TreeNode a1 = new TreeNode(1);
 		TreeNode a2 = new TreeNode(2);
 		TreeNode a3 = new TreeNode(2);
-		TreeNode a4 = new TreeNode(3);
+//		TreeNode a4 = new TreeNode(3);
 		TreeNode a5 = new TreeNode(3);
-		TreeNode a6 = new TreeNode(4);
+//		TreeNode a6 = new TreeNode(4);
 		TreeNode a7 = new TreeNode(4);
 		
 		a1.left = a2;

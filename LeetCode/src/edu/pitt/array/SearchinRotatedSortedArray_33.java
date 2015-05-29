@@ -91,11 +91,11 @@ public class SearchinRotatedSortedArray_33 {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] nums = {4,5,6,7,0,1,2};
-		int[] nums1 = {2,4,5,6,7,0,1};
-		int[] nums2 = {6,7,0,1,2,4,5};
-		int[] nums3 = {1,3};
-		int[] nums4 = {3,1};
+//		int[] nums = {4,5,6,7,0,1,2};
+//		int[] nums1 = {2,4,5,6,7,0,1};
+//		int[] nums2 = {6,7,0,1,2,4,5};
+//		int[] nums3 = {1,3};
+//		int[] nums4 = {3,1};
 		int[] nums5 = {5,1,3};
 		
 //		System.out.println("nums find 6: " + search(nums, 6));
