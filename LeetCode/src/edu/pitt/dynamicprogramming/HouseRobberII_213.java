@@ -3,7 +3,6 @@
  */
 package edu.pitt.dynamicprogramming;
 
-
 /**
  * House Robber II #213 --- accepted 324ms
  * After robbing those houses on that street, 
