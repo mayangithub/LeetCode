@@ -42,6 +42,7 @@ public class NumberofIslands_200 {
         return num;
     }
     
+    //remove adjacent '1's 
     public static void removeIsland(char[][] grid, int row, int col) {
     	grid[row][col] = '0';
     	if (row > 0) {
