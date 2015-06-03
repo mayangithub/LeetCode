@@ -15,7 +15,16 @@ package edu.pitt.dynamicprogramming;
  * @author yanma
  * @since 2015-06-03
  * @version 2015-06-03
- *
+ * 
+ * Note:
+ * Time complexity: O(m*n), Space complexity: O(m * n)
+ * I used a int[][] maxmatrix to store local max length of side of maximal square for each cell and use 'max' to store the global max length of side.
+ * Steps for general cases:
+ * 1. copy last row and last col to maxmatrix, get global max initial value
+ * 2. then in matrix, from matrix[matrix.length - 2][matrix[0].length - 2] to the left corner,
+ * if the cell is '1', in maxmatrix, find the min of adjacent three cells and add the min to the current value. compare with global max, keep it or update it.
+ * if the cell is '0', keep maxmatrix cell value 0.
+ * 3. return the max^2.
  */
 public class MaximalSquare_221 {
 
