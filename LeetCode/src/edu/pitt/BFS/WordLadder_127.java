@@ -66,7 +66,7 @@ public class WordLadder_127 {
         return 0;
     }
     
-    //use roCharArray() 524ms
+    //use toCharArray() 524ms
     //use String concatenation 876ms
     public static String replace(String pre, int pos, char c) {
 //    	String newString = pre.substring(0, pos) + c + pre.substring(pos + 1, pre.length());
