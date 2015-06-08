@@ -4,7 +4,7 @@
 package edu.pitt.string;
 
 /**
- * Valid Number #65 --- Accepted 320ms
+ * Valid Number #65 --- Accepted 350ms/320ms
  * Validate if a given string is numeric.
  * Some examples:
  * "0" => true
@@ -20,8 +20,69 @@ package edu.pitt.string;
  */
 public class ValidNumber_65 {
 	
-	
+	/**
+	 * Accepted 350ms
+	 * @param s
+	 * @return
+	 * 1. no whitespaces before and after
+	 * 2. ignore beginning + or -, so, after this , + and - can only happen after e
+	 * 3. only one '.' , after e, no '.'
+	 * 4. after e, num to false, only one e, before e, should have num
+	 * 5. must have a num at least, only -/+/e/. return false
+	 */
     public static boolean isNumber(String s) {
+    	int length = s.length();
+        int start = 0;
+        int end = length - 1;
+        while (start < length && Character.isWhitespace(s.charAt(start))) {
+			start++;
+		}
+        if (start == length ) return false;
+        while (end >= start && Character.isWhitespace(s.charAt(end))) {
+			end--;
+		}
+        if (s.charAt(start) == '+' || s.charAt(start) == '-') start++; 
+        
+        boolean num = false;
+        boolean dot = false;
+        boolean exp = false;
+        boolean neg = false;
+        boolean pos = false;
+        
+        while (start <= end) {
+			char c = s.charAt(start);
+			if (Character.isDigit(c)) {
+				num = true;
+			} else if (c == '.') {
+				if (dot || exp) return false;
+				dot = true;
+			} else if (c == 'e') {
+				if (exp || !num) return false;
+				exp = true;
+				num = false;
+			} else if (c == '+') {
+				if (pos || !exp || s.charAt(start - 1) != 'e') return false;
+				pos = true;
+			} else if (c == '-') {
+				if (neg || !exp || s.charAt(start - 1) != 'e') return false;
+				neg = true;
+			} else {
+				return false;
+			}
+			
+			start++;
+		}
+        
+        return num; //have to have a num at least, only -/+/e/. return false
+    }
+	
+	
+	/**
+	 * too complicated Accepted 350ms
+	 * @param s
+	 * @return
+	 */
+    public static boolean isNumber1(String s) {
         /**
          * 1. no trailing and leading white space   Y
          * 2. can have only one e and only one '.'  Y
@@ -139,6 +200,7 @@ public class ValidNumber_65 {
 		String s19= "6+1";
 		String s20= " -.";
 		String s21= "3.";
+		String s22= "-1.";
 		
 		
 		System.out.println("s0: " + s0 + " " + isNumber(s0));
@@ -163,6 +225,7 @@ public class ValidNumber_65 {
 		System.out.println("s19: " + s19 + " " + isNumber(s19));
 		System.out.println("s20: " + s20 + " " + isNumber(s20));
 		System.out.println("s21: " + s21 + " " + isNumber(s21));
+		System.out.println("s22: " + s22 + " " + isNumber(s22));
 	}
 
 }
