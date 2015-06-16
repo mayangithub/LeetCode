@@ -4,7 +4,7 @@
 package edu.pitt.array;
 
 /**
- * Best Time to Buy and Sell Stock II #122 --- Accepted 362ms/359ms
+ * Best Time to Buy and Sell Stock II #122 --- Accepted 362ms/359ms/440ms
  * Say you have an array for which the ith element is the price of a given stock on day i.
  * Design an algorithm to find the maximum profit. 
  * You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). 
@@ -97,6 +97,25 @@ public class BestTimetoBuyandSellStockII_122 {
     	
     	return total;
     }
+    
+    /**
+     * Accepted 440ms
+     * @param prices
+     * @return
+     */
+    public int maxProfit2(int[] prices) {
+    	if (prices == null || prices.length < 2) {
+        	return 0;
+        } 
+    	int profit = 0;
+    	for (int i = 1; i < prices.length; i++) {
+			if (prices[i] > prices[i - 1]) {
+				profit += prices[i] - prices[i - 1];
+			}
+		}
+    	return profit;
+    }
+    
     
 	/**
 	 * @param args
