@@ -36,7 +36,7 @@ public class LargestRectangleinHistogram_84 {
         int max = 0;
         Stack<Integer> stack = new Stack<Integer>(); // store index
         for (int i = 0; i < height.length; i++) {
-        	while (!stack.isEmpty() && height[i] <= height[stack.peek()]) {
+        	while (!stack.isEmpty() && height[i] < height[stack.peek()]) {
         		int index = stack.pop();
         		int area = (stack.isEmpty()) ? i * height[index]: (i - stack.peek() - 1) * height[index]; // between i and peek(), have height higher than height[index]
         		max = Math.max(area, max);
