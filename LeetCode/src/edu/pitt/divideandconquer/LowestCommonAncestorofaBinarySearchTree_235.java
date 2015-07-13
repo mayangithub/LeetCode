@@ -3,6 +3,8 @@
  */
 package edu.pitt.divideandconquer;
 
+import java.util.ArrayList;
+
 import edu.pitt.tree.TreeNode;
 
 /**
@@ -27,6 +29,42 @@ import edu.pitt.tree.TreeNode;
  */
 public class LowestCommonAncestorofaBinarySearchTree_235 {
 	
+	/**
+	 * using BST properties
+	 * @param root
+	 * @param p
+	 * @param q
+	 * @return
+	 */
+	public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        } else if (root == p || root == q) {
+            return root;
+        }
+        
+        if ((p.val < root.val && q.val > root.val) || (p.val > root.val && q.val < root.val)) {
+            return root;
+        }
+        
+        if (p.val < root.val && q.val < root.val) {
+            return lowestCommonAncestor2(root.left, p, q);
+        }
+        
+        if (p.val > root.val && q.val > root.val) {
+            return lowestCommonAncestor2(root.right, p, q);
+        }
+        
+        return null;
+    }
+	
+	/**
+	 * not using BST properties
+	 * @param root
+	 * @param p
+	 * @param q
+	 * @return
+	 */
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
             return null;
@@ -72,6 +110,74 @@ public class LowestCommonAncestorofaBinarySearchTree_235 {
         }
         
         return inTree(root.left, node) || inTree(root.right, node);
+    }
+    
+    /**
+     * Using arraylist to compare ancestors
+     * @param root
+     * @param p
+     * @param q
+     * @return
+     */
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        } else if (root == p || root == q) {
+            return root;
+        }
+        
+        ArrayList<TreeNode> plist = new ArrayList<TreeNode>();
+        ArrayList<TreeNode> qlist = new ArrayList<TreeNode>();
+        int psize = 0;
+        int qsize = 0;
+        
+        if (inTree1(root, p, plist)) {
+            psize = plist.size();
+        } 
+        
+        if (inTree1(root, q, qlist)) {
+            qsize = qlist.size();
+        } 
+        int i = psize - 1;
+        int j = qsize - 1;
+        while (i >= 0 && j >= 0) {
+            if (plist.get(i).val == qlist.get(j).val) {
+                i--; j--;
+            } else {
+                return plist.get(i + 1);
+            }
+        }
+        
+        if (i < 0 && plist.get(i + 1).val == qlist.get(j + 1).val) {
+            return plist.get(i + 1);
+        } else if (j < 0 && plist.get(i + 1).val == qlist.get(j + 1).val) {
+            return plist.get(i + 1);
+        }
+        
+        return null;
+    }
+    
+    public boolean inTree1(TreeNode root, TreeNode node, ArrayList<TreeNode> ancesterList) {
+        if (root == null) {
+            return false;
+        }
+        
+        if (root == node) {
+            ancesterList.add(node);
+            return true;
+        }
+        
+        if (inTree1(root.left, node, ancesterList)) {
+            ancesterList.add(root);
+            return true;
+        }
+        
+        if (inTree1(root.right, node, ancesterList)) {
+            ancesterList.add(root);
+            return true;
+        }
+        
+        return false;
     }
 
 }
