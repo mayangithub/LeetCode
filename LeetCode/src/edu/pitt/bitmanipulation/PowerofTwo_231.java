@@ -4,7 +4,7 @@
 package edu.pitt.bitmanipulation;
 
 /**
- * Power of Two #231 --- Accepted 264ms
+ * Power of Two #231 --- Accepted 264ms/248ms
  * Given an integer, write a function to determine if it is a power of two.
  * @author yanma
  * @since 2015-07-09
@@ -27,6 +27,23 @@ public class PowerofTwo_231 {
         
         return true;
     }
+    
+    /**
+     * seems faster, Accepted
+     * @param n
+     * @return
+     */
+    public boolean isPowerOfTwo1(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        if (n <= 0) {
+            return false;
+        }
+        
+        return n == 1 || (n % 2 == 0 && isPowerOfTwo1(n/2));
+    }
+    
 	
 
 	/**
