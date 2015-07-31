@@ -73,6 +73,36 @@ public class MaximumProductSubarray_152 {
     	
     }
     
+    
+    public int maxProduct1(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        
+        int max = Integer.MIN_VALUE;
+        int minpos = 1;
+        int maxneg = 1;
+        int pro = 1;
+        
+        for (int i = 0; i < nums.length; i++) {
+            pro *= nums[i];
+            if (pro > 0) {
+                max = Math.max(pro / minpos, max);
+                minpos = Math.min(minpos, pro);
+            } else if (pro < 0) {
+                max = Math.max(max, pro / maxneg);
+                maxneg = (maxneg > 0) ? pro: Math.max(maxneg, pro);
+            } else {
+                max = Math.max(pro, max);
+                pro = 1;
+                minpos = 1;
+                maxneg = 1;
+            }
+        }
+        
+        return max;
+    }
+    
 	/**
 	 * @param args
 	 */
